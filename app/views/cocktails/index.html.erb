@@ -1,8 +1,27 @@
+<div class="home-banner">
+<h1>Cocktail paradiso</h1>
+</div>
 
-<%= link_to 'Add new', new_cocktail_path, class: "btn btn-primary" %>
 
-<h1>Cocktail paradise</h1>
-<% @cocktails.each do |cocktail| %>
-<h3> <%= cocktail.name %> </h3>
-<%= link_to 'discover', cocktail_path(cocktail), class: "btn btn-primary"%>
-<% end %>
+<div class="container pt-5">
+  <div class ="row">
+    <% @cocktails.each do |cocktail| %>
+        <div class="col-4 pb-3">
+        <div class="card" style="width: 10rem;">
+           <div class="card-body">
+            <h5 class="card-title"><%= cocktail.name %></h5>
+          <%= link_to 'discover', cocktail_path(cocktail), class: "btn btn-light"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="align-items-center">
+<%= link_to 'Add new', new_cocktail_path, class: "btn btn-info" %>
+  </div>
+</div>
+
+
