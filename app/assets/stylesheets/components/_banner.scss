@@ -1,9 +1,12 @@
 .home-banner {
-  background-image: url('https://res.cloudinary.com/dh27aoc3s/image/upload/v1601028755/ay2virvzvzezcjhe0jgq.png');
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url('https://res.cloudinary.com/dh27aoc3s/image/upload/v1601028755/ay2virvzvzezcjhe0jgq.png');
   background-size: cover;
   background-repeat:no-repeat;
   height: 200px;
-  color: #c70039;
+  color: #fcfcd4;
   text-align: center;
   padding-top: 80px;
 }
