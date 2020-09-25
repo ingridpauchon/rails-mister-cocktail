@@ -1,17 +1,19 @@
-<div class="home-banner">
+<div class="container home-banner">
 <h1>Cocktail paradiso</h1>
 </div>
 
 
-<div class="container pt-5">
-  <div class ="row">
+<div class="container pt-5 ">
+  <div class ="row align-items-center">
     <% @cocktails.each do |cocktail| %>
         <div class="col-4 pb-3">
-        <div class="card" style="width: 10rem;">
+        <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="width: 200px;">
            <div class="card-body">
             <h5 class="card-title"><%= cocktail.name %></h5>
-          <%= link_to 'discover', cocktail_path(cocktail), class: "btn btn-light"%>
           </div>
+          <%= link_to 'discover', cocktail_path(cocktail), class: "btn btn-light"%>
+          <%= link_to 'delete', cocktail_path(cocktail), method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "btn btn-info"%>
         </div>
       </div>
     <% end %>
@@ -20,7 +22,7 @@
 
 <div class="container">
   <div class="align-items-center">
-<%= link_to 'Add new', new_cocktail_path, class: "btn btn-info" %>
+<%= link_to 'Add new', new_cocktail_path, class: "btn btn-light" %>
   </div>
 </div>
 
