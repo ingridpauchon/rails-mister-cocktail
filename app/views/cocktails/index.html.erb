@@ -2,28 +2,33 @@
 <h1>Cocktail paradiso</h1>
 </div>
 
+<div class="container">
+  <div clas="align-items-center">
+<%= link_to 'Add new', new_cocktail_path, class: "btn btn-light mt-5 rounded shadow-sm bg-white" %>
+  </div>
+</div>
 
 <div class="container pt-5">
   <div class ="row align-items-center">
     <% @cocktails.each do |cocktail| %>
         <div class="col-4 pb-3">
-        <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+        <div class="card shadow-sm bg-white rounded">
            <div class="card-body">
-            <h5 class="card-title"><%= cocktail.name %></h5>
-          </div>
-          <%= link_to 'discover', cocktail_path(cocktail), class: "btn btn-light"%>
+            <%= cl_image_tag cocktail.photo.key, height: 150, width: 170, crop: :fill %>
+
+            <div>
+            <h5 class="card-title mt-2 font-weight-bold"><%= cocktail.name %></h5>
+            </div>
+            </div>
+          <%= link_to 'discover', cocktail_path(cocktail), class: "btn btn-info"%>
           <%= link_to 'delete', cocktail_path(cocktail), method: :delete,
-                  data: { confirm: "Are you sure?" }, class: "btn btn-info"%>
+                  data: { confirm: "Are you sure?" }, class: "btn btn-light"%>
         </div>
       </div>
     <% end %>
     </div>
   </div>
 
-<div class="container">
-  <div class="align-items-center">
-<%= link_to 'Add new', new_cocktail_path, class: "btn btn-light" %>
-  </div>
-</div>
+
 
 
