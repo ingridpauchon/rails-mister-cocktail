@@ -1,6 +1,6 @@
 <div class="container pt-5">
 <%= simple_form_for [ @cocktail ] do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, :maxlength => 16 %>
   <%= f.input :photo, as: :file %>
   <%= f.submit "add", class: "btn btn-primary" %>
 <% end %>
